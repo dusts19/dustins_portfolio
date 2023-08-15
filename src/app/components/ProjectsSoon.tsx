@@ -1,0 +1,23 @@
+import Image from "next/image"
+import person_thinking from "public/images/person-thinking.svg"
+import light from "public/images/light.svg"
+
+export default function ProjectsSoon () {
+    return (
+        <div className="flex flex-col items-center p-10 h-full w-full dark:bg-inherit">
+            <p>Working on more!</p>
+            <div className="flex items-center">
+                <Image 
+                    className="h-60 w-auto mt-3 p-8  py-6 dark:rounded-tl-md dark:rounded-bl-lg dark:bg-gradient-to-br dark:from-slate-900 dark:from-20% dark:via-slate-200 dark:via-30% dark:to-yellow-400 dark:to-60%"
+                    src={light}
+                    alt="Person thinking"
+                />
+                <Image 
+                    className="h-60 w-auto mt-3 p-8 dark:rounded-tr-lg dark:rounded-br-md  dark:bg-gradient-to-r dark:from-yellow-400 dark:from-60% dark:via-yellow-100 dark:via-90% dark:to-slate-900"
+                    src={person_thinking}
+                    alt="Person thinking"   
+                />         
+            </div>
+        </div>
+    )
+}
