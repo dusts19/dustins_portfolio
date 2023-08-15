@@ -29,7 +29,7 @@ export async function getProjects(){
         title: item.title,
         description: item.description,
         technologies: item.technologies,
-        date: item.date.toISOString(),
+        date: item.date.toString(),
     }))
 
     return plainData;

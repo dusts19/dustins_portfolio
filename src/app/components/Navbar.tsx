@@ -3,8 +3,9 @@ import Image from "next/image"
 import github from 'public/images/github.svg'
 import linkedin from 'public/images/linkedin.svg'
 // alt for resume logo link
-import resume from 'public/images/resume.svg'
-import document from 'public/images/document.svg'
+// import resume from 'public/images/Dustin_Resume.pdf'
+// import document from 'public/images/document.svg'
+
 
 
 export default function Navbar() {
@@ -21,11 +22,11 @@ export default function Navbar() {
                         <Image src={linkedin} alt="linkedin" className="h-10 w-auto"/>
                     </Link>
                 </div>        
-                <div>
-                    <Link href="https://www.youtube.com" target="_blank" className="">
+                {/* <div>
+                    <Link href={resume} target="_blank" className="">
                         <Image src={document} alt="resume" className="h-10 w-auto"/>
                     </Link>                
-                </div>
+                </div> */}
             </div>
         </nav>
     )
