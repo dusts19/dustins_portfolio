@@ -32,7 +32,11 @@ export default function Contact() {
         }
     }
 
-    function handleChange(event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) {
+    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const { name, value } = event.target
+        setFormData(prevState => ({ ...prevState, [name]: value}))
+    }
+    function handleTextareaChange(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const { name, value } = event.target
         setFormData(prevState => ({ ...prevState, [name]: value}))
     }
@@ -50,20 +54,20 @@ export default function Contact() {
                     name="username"
                     required
                     value={formData.username}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                 />
                 <Input 
                     label="Email"
                     name="email" 
                     type="email"
                     value={formData.email}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                 />
                 <Input 
                     label="Subject"
                     name="subject" 
                     value={formData.subject}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                 />
                 <div>
                 <Textarea
@@ -71,7 +75,7 @@ export default function Contact() {
                     name="message" 
                     required
                     value={formData.message}
-                    onChange={handleChange}
+                    onChange={handleTextareaChange}
                 />
                 </div>
                 <button
