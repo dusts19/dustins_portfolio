@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: {project: Project }) {
 
     return(
         <div className="border-slate-400">
-            <Image src={`${imgSrc}`} alt={project.title} width={300} height={200} className="border-2 border-slate-300 h-48" />
+            <Image src={imgSrc} alt={project.title} width={300} height={200} className="border-2 border-slate-300 h-48" />
             <h2>{project.title}</h2>
             <p className="max-w-xs">{shortDescription}</p>
             {project.title && (<Link href= {`/projects/${project.title}`}>
