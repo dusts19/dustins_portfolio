@@ -1,5 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
+import sample_1 from "public/images/sample_1.jpg"
+import sample_2 from "public/images/sample_2.jpg"
+import sample_3 from "public/images/sample_3.jpg"
+import sample_4 from "public/images/sample_4.jpg"
+import sample_5 from "public/images/sample_5.jpg"
 
 type Project = {
     _id: string,
