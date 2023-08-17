@@ -4,9 +4,9 @@ import light from "public/images/light.svg"
 
 export default function ProjectsSoon () {
     return (
-        <div className="flex flex-col items-center p-10 h-full w-full xs:p-8 dark:bg-inherit">
+        <div className="flex flex-col items-center p-10 h-full w-full xs:pt-8 xs:pl-8 xs:pb-0 dark:bg-inherit">
             <p>Working on more!</p>
-            <div className="flex items-center xs:w-auto xs:mt-10 xs:pl:16">
+            <div className="flex items-center xs:w-auto xs:mt-10 xs:pl-4">
                 <Image 
                     className="h-60 sm:h-40 xs:h-28 xs:-m-0.5 w-auto mt-3 p-8  py-6 dark:rounded-tl-md dark:rounded-bl-lg dark:bg-gradient-to-br dark:from-slate-900 dark:from-15% dark:via-slate-300 dark:via-20% dark:to-yellow-400 dark:to-60%"
                     src={light}
