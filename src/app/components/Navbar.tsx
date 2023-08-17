@@ -10,8 +10,8 @@ import linkedin from 'public/images/linkedin.svg'
 
 export default function Navbar() {
     return(
-        <nav className="fixed flex flex-col top-16 left-0 h-screen w-24 sm:w-20 xs:w-16 bg-gradient-to-r from-neutral-100 via-sky-200 to-neutral-100 py-6 dark:from-slate-900 dark:via-sky-200 dark:to-slate-900">
-            <div className="list-none flex flex-col items-center sm:p-2 sm:mt-4 mt-8 space-y-6">
+        <nav className="fixed flex flex-col top-16 left-0 h-screen w-24 sm:w-20 xs:w-16 bg-gradient-to-r from-white via-sky-100 to-white py-6 dark:from-slate-900 dark:via-sky-100 dark:to-slate-900">
+            <div className="list-none flex flex-col items-center sm:p-2 sm:mt-4 mt-8 xs:mt-3 space-y-6">
                 <div className="">
                     <Link href="https://github.com/dusts19" target="_blank" className="">
                         <Image src={github} alt="github" className="h-10 w-auto"/>

@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className='dark' suppressHydrationWarning>
         <Head />
         
-        <body className={`{montserrat.className} flex-1 text-black bg-gradient-to-br from-gray-50 to-green-50`}>
+        <body className={`{montserrat.className} flex-1 text-black bg-gradient-to-br from-white from-10% to-green-50`}>
             <Provider>
               <div className={'dark:text-white dark:bg-slate-900'}>
                   <Header /> 

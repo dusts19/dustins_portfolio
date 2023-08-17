@@ -23,8 +23,8 @@ export default function ProjectsDisplay() {
 
     return (
         <div className=''>
-            <div className="flex items-center xs:pl-10 xs:-m-2 xs:mb-5">
-                <div className="grid lg:grid-cols-3 gap-1 xs:grid-cols-1 md:grid-cols-2">
+            <div className="flex xs:pl-12 xs:mb-5 md:pr-2 md:pl-4">
+                <div className="grid items-center lg:grid-cols-3 xs:gap-1 xs:grid-cols-1 xs:space-y-3 md:grid-cols-2">
                     {projects.map((project) => (
                         <ProjectCard key={project._id} project={project} />
                     ))}

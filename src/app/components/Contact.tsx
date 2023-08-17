@@ -42,8 +42,8 @@ export default function Contact() {
     }
 
     return (
-        <div className="flex flex-col items-center p-8 mb-40 w-full space-y-8 border-x-black dark:bg-inherit">
-            <p>Contact, comments, or critiques about the page.</p>
+        <div className="flex flex-col items-center p-8 xs:pt-8 xs:pl-16 mb-40 xs:mb-32 w-full space-y-8 border-x-black dark:bg-inherit xs:pr-1">
+            <p className="text-center">Contact, comments, or critiques about the page.</p>
             <form 
                 onSubmit={handleSubmit}
                 method="post" 
@@ -79,7 +79,7 @@ export default function Contact() {
                 />
                 </div>
                 <button
-                    className="bg-blue-500 rounded-full p-2 dark:bg-sky-900 border-slate-600 border-2"
+                    className="bg-blue-500 rounded-full p-2 dark:bg-sky-900 border-slate-600 border-2 dark:border-white"
                     type="submit"
                 >
                     Message

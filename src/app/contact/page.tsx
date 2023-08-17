@@ -3,10 +3,10 @@ import Contact from "../components/Contact"
 
 export default function ContactPage() {
     return (
-        <div className="flex min-h-full flex-col items-center justify-between w-full dark:bg-black xs:pl-6 ">
-            <p className="pt-10 font-bold text-3xl underline">Contact</p>
+        <div className="flex min-h-full flex-col items-center justify-between w-full dark:bg-black">
+            <p className="pt-10 xs:pl-12 font-bold text-3xl underline">Contact</p>
             <Contact />
-            <div className='pb-5'>
+            <div className='pb-5 xs:pl-8 underline'>
                 <Link href="/">Back to Home Page</Link>
             </div>
         </div>
