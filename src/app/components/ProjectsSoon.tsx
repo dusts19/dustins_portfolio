@@ -4,7 +4,7 @@ import light from "public/images/light.svg"
 
 export default function ProjectsSoon () {
     return (
-        <div className="flex flex-col items-center p-10 h-full w-full xs:p-12 xs:-mr-4 dark:bg-inherit">
+        <div className="flex flex-col items-center p-10 h-full w-full xs:p-8 dark:bg-inherit">
             <p>Working on more!</p>
             <div className="flex items-center xs:w-auto xs:mt-10 xs:pl:16">
                 <Image 
