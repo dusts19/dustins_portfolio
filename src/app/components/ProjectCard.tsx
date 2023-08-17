@@ -17,10 +17,10 @@ export default function ProjectCard({ project }: {project: Project }) {
     let imgSrc='/images/' + project.title + '.jpg'
 
     return(
-        <div className="border-slate-400">
+        <div className="xs:px-0.5">
             <Image src={imgSrc} alt={project.title} width={300} height={200} className="border-2 border-slate-300 h-48" />
-            <h2>{project.title}</h2>
-            <p className="max-w-xs">{shortDescription}</p>
+            <h2 className="xs:font-semibold">{project.title}</h2>
+            <p className="max-w-xs flex-grow xs:text-sm">{shortDescription}</p>
             {project.title && (<Link href= {`/projects/${project.title}`}>
                 {/* <p>See More</p> */}
             </Link>

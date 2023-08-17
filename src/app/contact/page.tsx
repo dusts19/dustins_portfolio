@@ -3,7 +3,7 @@ import Contact from "../components/Contact"
 
 export default function ContactPage() {
     return (
-        <div className="flex min-h-full flex-col items-center justify-between w-full dark:bg-black">
+        <div className="flex min-h-full flex-col items-center justify-between w-full dark:bg-black xs:pl-6 ">
             <p className="pt-10 font-bold text-3xl underline">Contact</p>
             <Contact />
             <div className='pb-5'>

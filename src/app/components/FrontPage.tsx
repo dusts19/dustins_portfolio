@@ -8,8 +8,8 @@ export default function FrontPage() {
     const dataVis = ['Tableau', 'Excel']
 
     return (
-        <div className="flex flex-col items-center justify-center pt-6 w-full dark:bg-inherit">
-            <Image className="h-72 w-72 mt-4 rounded-full bg-teal-500 dark:bg-sky-800" src={coffee_fueled_worker} alt="Coffee Fueled Worker/Placeholder"/>
+        <div className="flex flex-col items-center justify-center pt-6 w-full dark:bg-inherit text-center">
+            <Image className="xs:h-36 xs:w-36 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:w-72 lg:h-72 mt-4 rounded-full bg-teal-500 dark:bg-sky-800" src={coffee_fueled_worker} alt="Coffee Fueled Worker/Placeholder"/>
             <div className="flex flex-col items-center justify-center p-10 space-y-2">
                 <h1 className="mx-4 text-3xl font-bold">Dustin Shin</h1>
                 <p className='font-semibold'>
@@ -22,7 +22,7 @@ export default function FrontPage() {
                     Site created with Next.js, Typescript, Tailwind.css, & MongoDb
                 </p>
             </div>
-            <div className='flex gap-4'>
+            <div className='grid md:grid-cols-4 sm:grid-cols-2 gap-4'>
                 <div>
                     <p className="text-lg font-bold">Web Dev</p>
                     <ul>

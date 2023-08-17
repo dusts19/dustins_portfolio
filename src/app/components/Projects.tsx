@@ -7,10 +7,10 @@ export default function Projects() {
 
     return (
         <div>
-            <div className="flex flex-col items-center p-10 w-full dark:bg-inherit mt-10 mb-32">
-                <p className="text-6xl mt-10 mb-20">Projects</p>
+            <div className="flex flex-col items-center px-10 w-full dark:bg-inherit mt-10 md:mb-32 sm:mb-24">
+                <p className="text-6xl mt-10 mb-20 xs:mb-14">Projects</p>
                 <ProjectsDisplay />
-                <div className="flex justify-end w-full">
+                <div className="flex justify-end w-full mt-4 xs:mb-10">
                     <div >
                         <Link href="/projects" >See All Projects</Link>
                     </div>

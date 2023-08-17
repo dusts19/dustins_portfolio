@@ -50,18 +50,18 @@ export default function ProjectsDisplay() {
 
     return (
         <div className=''>
-            <div className="flex items-center">
-                <button className="mr-4" onClick={handleLeftClick}>
-                    {resolvedTheme === "dark" ? <Image src={dark_left_arrow} alt="dark_mode_left_arrow" height={10} width={10} className="h-10 w-auto bg-black rounded-full"/> :
-                    <Image src={light_left_arrow} alt="light_mode_left_arrow" height={10} width={10} className="h-10 w-auto"/>}
+            <div className="flex items-center xs:-mr-9">
+                <button className="mr-4 sm:mr-2 sm:ml-4" onClick={handleLeftClick}>
+                    {resolvedTheme === "dark" ? <Image src={dark_left_arrow} alt="dark_mode_left_arrow" height={10} width={10} className="h-10 w-auto sm:h-12 xs:h-16 bg-black rounded-full"/> :
+                    <Image src={light_left_arrow} alt="light_mode_left_arrow" height={10} width={10} className="h-10 w-auto sm:h-12 xs:h-16"/>}
                 </button>
-                <div className="flex items-center">
+                <div className="flex items-stretch sm:gap-1 sm:-my-3 sm:h-fit">
                     {displayedProjects.map((project) => (
                         <ProjectCard key={project._id} project={project} />
                     ))}
                 </div>                
                 <button className="ml-2" onClick={handleRightClick}>
-                    {resolvedTheme === "dark" ? <Image src={dark_right_arrow} alt="dark_mode_right_arrow" height={10} width={10} className="h-10 w-auto bg-black rounded-full"/> : <Image src={ light_right_arrow } alt="light_mode_right_arrow" height={10} width={10} className="h-10 w-auto"/>}
+                    {resolvedTheme === "dark" ? <Image src={dark_right_arrow} alt="dark_mode_right_arrow" height={10} width={10} className="h-10 w-auto sm:h-12 xs:h-16 bg-black rounded-full"/> : <Image src={ light_right_arrow } alt="light_mode_right_arrow" height={10} width={10} className="h-10 w-auto sm:h-12 xs:h-16"/>}
                 </button>
             </div>
 

@@ -21,7 +21,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='dark' suppressHydrationWarning>
-
         <Head />
         
         <body className={`{montserrat.className} flex-1 text-black bg-gradient-to-br from-gray-50 to-green-50`}>

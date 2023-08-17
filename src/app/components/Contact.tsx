@@ -79,7 +79,7 @@ export default function Contact() {
                 />
                 </div>
                 <button
-                    className="bg-blue-500 rounded-full p-2 dark:bg-sky-900"
+                    className="bg-blue-500 rounded-full p-2 dark:bg-sky-900 border-slate-600 border-2"
                     type="submit"
                 >
                     Message
