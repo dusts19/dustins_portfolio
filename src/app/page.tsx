@@ -17,13 +17,9 @@ interface Work {
   imageUrl?: string,
 }
 
-interface WorkProps {
-  // title: string; position: string; description: string; duration: string; url: string; imageUrl?: string ;
-  works: Work[],
-}
 
 
-const Home: React.FC<WorkProps> = async () => {
+const Home: React.FC = async () => {
   const DB_URI = `${process.env.MONGODB_URI}` || 'mongodb://localhost:27017/portfolio';
   console.log("MongoDB URI:", DB_URI);
   console.log('MongoDB connection state:', mongoose.connections[0].readyState);
