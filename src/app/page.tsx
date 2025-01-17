@@ -53,7 +53,7 @@ const Home: React.FC = async () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between w-full dark:bg-black xs:pl-6">
       <FrontPage />
-      <WorkPage works={worksData} />
+      <WorkPage  />
       <Projects />
       {/* <Contact /> */}
     </main>
