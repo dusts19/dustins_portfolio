@@ -18,8 +18,8 @@ const VisitorSchema = new mongoose.Schema({
         required: true,
     },
 
-}, {collection: 'visitors'})
+}, {collection: 'visitors', timestamps: true})
 
-const Visitor = mongoose.models.Visitor || mongoose.model('Visitor', VisitorSchema)
+const Visitor = mongoose.models?.Visitor || mongoose.model('Visitor', VisitorSchema)
 
 export default Visitor

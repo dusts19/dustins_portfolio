@@ -6,8 +6,7 @@ type InputProps = {
     value: string,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
-
-export default function Input({ label, name, type="text", required=false, value, onChange }: InputProps) {
+const Input: React.FC<InputProps> = ({ label,  name, type="text", required=false, value, onChange}: InputProps) =>{
     return (
         <div className="flex flex-col">
             <label htmlFor={name}>{label}</label>
@@ -24,3 +23,4 @@ export default function Input({ label, name, type="text", required=false, value,
         </div>
     )
 }
+export default Input;

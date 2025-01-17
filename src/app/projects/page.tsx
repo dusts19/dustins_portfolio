@@ -2,7 +2,8 @@ import Link from "next/link";
 import ProjectsSoon from "../components/ProjectsSoon";
 import Display from "./components/Display"
 
-export default function Projects() {
+
+const Projects: React.FC = () => {
     return (
         <div>
             <div className="flex min-h-screen flex-col items-center w-full dark:bg-black xs:pl-4 md:pl-12">
@@ -18,3 +19,4 @@ export default function Projects() {
         </div>
     )
 }
+export default Projects;

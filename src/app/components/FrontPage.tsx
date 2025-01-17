@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import coffee_fueled_worker from 'public/images/coffee-fueled-worker.svg'
+import CoffeeFueledWorkerSVG from '../../../public/images/coffee-fueled-worker.svg'
+import React from 'react'
 
-export default function FrontPage() {
+const FrontPage: React.FC = () => {
     const webDev = ['Next.js', 'Tailwind.css', 'Node/Npm', 'MongoDb', 'SQL']
     const dataSci = ['Python', 'TensorFlow', 'Keras']
     const technologies = ['Git', 'Linux', 'Docker', 'VS Code']
@@ -9,7 +10,8 @@ export default function FrontPage() {
 
     return (
         <div className="flex flex-col items-center justify-center pt-6 w-full dark:bg-inherit text-center">
-            <Image className="xs:h-36 xs:w-36 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:w-72 lg:h-72 mt-4 rounded-full bg-teal-500 dark:bg-sky-800" src={coffee_fueled_worker} alt="Coffee Fueled Worker/Placeholder"/>
+            {/* <Image className="xs:h-36 xs:w-36 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:w-72 lg:h-72 mt-4 rounded-full bg-teal-500 dark:bg-sky-800" src={coffee_fueled_worker} alt="Coffee Fueled Worker/Placeholder"/> */}
+            <CoffeeFueledWorkerSVG className="xs:h-36 xs:w-36 sm:h-52 sm:w-52 md:h-60 md:w-60 lg:w-72 lg:h-72 mt-4 rounded-full bg-teal-500 dark:bg-sky-800" />
             <div className="flex flex-col items-center justify-center p-10 space-y-2">
                 <h1 className="mx-4 text-3xl font-bold">Dustin Shin</h1>
                 <p className='font-semibold'>
@@ -61,3 +63,4 @@ export default function FrontPage() {
         
     )
 }
+export default FrontPage;

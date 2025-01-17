@@ -1,4 +1,4 @@
-export default function head() {
+const head: React.FC = () => {
     return (
         <>
             <title>Dustin Shin&apos;s Contact</title>
@@ -7,3 +7,4 @@ export default function head() {
         </>
     )
 }
+export default head;

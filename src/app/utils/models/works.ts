@@ -1,16 +1,12 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-// interface Project extends Document {
-//     title: string;
-//     description: string;
-//     technologies: string;
-//     url: string;
-//     imageUrl?: string;
-// }
 
-
-const projectSchema = new Schema({
+const workSchema = new Schema({
     title: {
+        type: String,
+        required: true,
+    },
+    position: {
         type: String,
         required: true,
     },
@@ -18,7 +14,7 @@ const projectSchema = new Schema({
         type: String,
         required: true,
     },
-    technologies: {
+    duration: {
         type: String,
         required: true,
     },
@@ -30,8 +26,9 @@ const projectSchema = new Schema({
         type: String,
         required: false,
     }
-}, {collection: 'projects', timestamps: true})
+}, {collection: 'works', timestamps: true})
 
-const Projects = mongoose.models?.Project || mongoose.model('Project', projectSchema)
 
-export default Projects
+const Works = mongoose.models?.Works || mongoose.model('Works', workSchema)
+
+export default Works

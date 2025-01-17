@@ -6,7 +6,8 @@ type TextareaProps = {
     onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-export default function Textarea({label, name, required=false, value, onChange }: TextareaProps){
+
+const Textarea: React.FC<TextareaProps> = ({label, name, required=false, value, onChange }: TextareaProps) => {
     return (
         <div className="flex flex-col">
             <label htmlFor={name}>{label}</label>
@@ -24,3 +25,4 @@ export default function Textarea({label, name, required=false, value, onChange }
         </div>
     )
 }
+export default Textarea;

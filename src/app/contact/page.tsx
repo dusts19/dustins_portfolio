@@ -1,7 +1,8 @@
 import Link from "next/link"
 import Contact from "../components/Contact"
 
-export default function ContactPage() {
+
+const ContactPage: React.FC = () => {
     return (
         <div className="flex min-h-full flex-col items-center justify-between w-full dark:bg-black">
             <p className="pt-10 xs:pl-12 font-bold text-3xl underline">Contact</p>
@@ -12,3 +13,4 @@ export default function ContactPage() {
         </div>
     )
 }
+export default ContactPage;

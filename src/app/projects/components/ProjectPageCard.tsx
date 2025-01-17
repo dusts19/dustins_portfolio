@@ -17,22 +17,21 @@ interface Project {
     imageUrl?: string,
 }
 
-interface ProjectCardProps {
+interface ProjectPageCardProps {
     project: Project;
 }
 
-const ProjectCard: React.FC< ProjectCardProps> = ({ project }) => {
+const ProjectPageCard: React.FC< ProjectPageCardProps> = ({ project }) => {
     let pathname = usePathname() || '/'
 
-    const shortDescription = project.description.length > 100 ? project.description.slice(0, 100) + '...' : project.description
-    let imgSrc='/images/' + project.title + '.jpg'
+    // const shortDescription = project.description.length > 100 ? project.description.slice(0, 100) + '...' : project.description
+    let imgSrc='/images/' + project.imageUrl + '.jpg'
 
     return(
         <div className="xs:px-0.5">
             {project.imageUrl && (
                 <Image 
-                    src={`/images/${project.imageUrl}.jpg`} 
-                    // src={imgSrc} 
+                    src={imgSrc} 
                     alt={project.title} 
                     width={300} 
                     height={200} 
@@ -45,7 +44,9 @@ const ProjectCard: React.FC< ProjectCardProps> = ({ project }) => {
                 />
             )}
             <h2 className="xs:font-semibold md:pb-2 xs:pb-1">{project.title}</h2>
-            <p className="max-w-xs flex-grow xs:text-sm xs:pr-1">{shortDescription}</p>
+            <p className="max-w-xs flex-grow xs:text-sm xs:pr-1">{project.description}</p>
+            <p className="max-w-xs flex-grow xs:text-sm xs:pr-1">{project.technologies}</p>
+            <Link href={`${project.url}`} className="max-w-xs flex-grow xs:text-sm xs:pr-1 underline text-blue-500 hover:text-blue-800 visited:text-purple-600">{project.url}</Link>
             {project.title && (<Link href= {`/projects/${project.title}`}>
                 {/* <p>See More</p> */}
             </Link>
@@ -53,4 +54,4 @@ const ProjectCard: React.FC< ProjectCardProps> = ({ project }) => {
         </div>
     )
 }
-export default ProjectCard;
+export default ProjectPageCard;

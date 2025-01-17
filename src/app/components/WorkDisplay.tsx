@@ -10,47 +10,52 @@ import ProjectCard from "./ProjectCard";
 // import light_right_arrow from 'public/images/light-right-circle-svgrepo-com.svg'
 // import dark_left_arrow from 'public/images/chevron-left-circle-svgrepo-com.svg'
 // import dark_right_arrow from 'public/images/chevron-right-circle-svgrepo-com.svg'
+import WorkCard from './WorkCard';
 
+    interface Work {
+        _id: string,
+        title: string,
+        position: string,
+        description: string,
+        duration: string,
+        url: string,
+        imageUrl?: string,
+    }
+    interface WorkProps {
+    // title: string; position: string; description: string; duration: string; url: string; imageUrl?: string ;
+        works: Work[],
+    }
 
-interface Project {
-    _id: string,
-    title: string,
-    description: string,
-    technologies: string,
-    url: string,
-    imageUrl?: string,
-}
-
-const ProjectsDisplay: React.FC = () => {
+const WorkDisplay: React.FC<WorkProps> = ({works}) => {
     const { resolvedTheme } = useTheme()
 
-    const [projects, setProjects] = useState<Project[]> ([])
-    const [displayedProjects, setDisplayedProjects] = useState<Project[]>([])
+    const [myWorks, setMyWorks] = useState<Work[]> ([])
+    const [displayedWorks, setDisplayedWorks] = useState<Work[]>([])
     const [currStartIndex, setCurrStartIndex] = useState(0)
 
-    useEffect(() => {
-        fetch('/api/projects')
-        .then((response) => response.json())
-        .then((data) => {
-            setProjects(data)
-            setDisplayedProjects(data.slice(0,3))
-        })
-        .catch((error) => console.error('Error fetching projects:', error));
-    }, [])
+    // useEffect(() => {
+    //     fetch('/api/projects')
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         setWorks(data)
+    //         setDisplayedWorks(data.slice(0,3))
+    //     })
+    //     .catch((error) => console.error('Error fetching projects:', error));
+    // }, [])
 
     const handleLeftClick = () => {
         if (currStartIndex > 0) {
             const newStartIndex = currStartIndex - 1
             setCurrStartIndex(newStartIndex)
-            setDisplayedProjects(projects.slice(newStartIndex, newStartIndex + 3))
+            setDisplayedWorks(myWorks.slice(newStartIndex, newStartIndex + 3))
         }
     }
 
     const handleRightClick = () => {
-        if (currStartIndex + 3 < projects.length) {
+        if (currStartIndex + 3 < myWorks.length) {
             const newStartIndex = currStartIndex + 1
             setCurrStartIndex(newStartIndex)
-            setDisplayedProjects(projects.slice(newStartIndex, newStartIndex + 3))
+            setDisplayedWorks(myWorks.slice(newStartIndex, newStartIndex + 3))
         }
     }
 
@@ -67,8 +72,8 @@ const ProjectsDisplay: React.FC = () => {
                      {/* <Image src={light_left_arrow} alt="light_mode_left_arrow" height={10} width={10} className="h-10 w-auto sm:h-12 xs:h-16"/> */}
                 </button>
                 <div className="flex items-stretch sm:gap-1 sm:-my-3 sm:h-fit">
-                    {displayedProjects.map((project) => (
-                        <ProjectCard key={project._id} project={project} />
+                    {works.map((work) => (
+                        <WorkCard key={work._id} work={work} />
                     ))}
                 </div>                
                 <button className="" onClick={handleRightClick}>
@@ -83,4 +88,4 @@ const ProjectsDisplay: React.FC = () => {
 
     )
 }
-export default ProjectsDisplay;
+export default WorkDisplay;

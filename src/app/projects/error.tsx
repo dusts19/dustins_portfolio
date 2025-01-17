@@ -2,13 +2,13 @@
  
 import { useEffect } from 'react'
  
-export default function Error({
-  error,
-  reset,
-}: {
+
+interface ErrorProps {
   error: Error
   reset: () => void
-}) {
+}
+
+const Error: React.FC<ErrorProps> = ({error, reset}) => {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(error)
@@ -28,3 +28,4 @@ export default function Error({
     </div>
   )
 }
+export default Error;

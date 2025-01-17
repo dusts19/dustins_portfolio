@@ -1,6 +1,4 @@
-'use server'
-
-import { connectToDatabase } from './db'
+import connectToDatabase from './db'
 import Projects from './models/projects'
 import Visitor from './models/visitors'
 
@@ -19,7 +17,6 @@ type FormData = {
 }
 
 export async function getProjects(){
-    'use server'
     await connectToDatabase();
 
     const data = await Projects.find({})
@@ -36,7 +33,6 @@ export async function getProjects(){
 }
 
 export async function postEntry(formData: FormData){
-    'use server'
     await connectToDatabase();
     
     const data = await Visitor.create({

@@ -2,8 +2,8 @@
 import { useTheme } from "next-themes"
 import Image from "next/image"
 
-export default function Themebutton() {
 
+const Themebutton: React.FC = () => {
     const { setTheme, resolvedTheme} = useTheme()
 
     if ( !resolvedTheme ) {
@@ -29,3 +29,4 @@ export default function Themebutton() {
         </button>
     )
 }
+export default Themebutton;

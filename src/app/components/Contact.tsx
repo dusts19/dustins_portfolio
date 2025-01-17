@@ -5,7 +5,7 @@ import { postEntry } from "../utils/action"
 import Input from "./Input"
 import Textarea from "./Textarea"
 
-export default function Contact() {
+const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
         username:'',
         email:'',
@@ -18,7 +18,20 @@ export default function Contact() {
         event.preventDefault()
 
         try{
-            await postEntry(formData)
+            const response = await fetch('/api/visitors', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+
+            if (response.ok) {
+                setError('Message sent successfully!');
+            } else {
+                setError(`Error: ${result.message}`);
+            }
     
             setFormData({
                 username:'',
@@ -30,6 +43,19 @@ export default function Contact() {
         } catch (err) {
             setError((err as Error).message)
         }
+        // try{
+        //     await postEntry(formData)
+    
+        //     setFormData({
+        //         username:'',
+        //         email:'',
+        //         subject:'',
+        //         message:'',
+        //     })
+        //     setError(null)
+        // } catch (err) {
+        //     setError((err as Error).message)
+        // }
     }
 
     function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -88,3 +114,5 @@ export default function Contact() {
         </div>
     )
 }
+
+export default Contact;

@@ -1,14 +1,14 @@
 'use client' // Error components must be Client Components
  
-import { useEffect } from 'react'
- 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error
+import React, { useEffect } from 'react'
+
+interface ErrorProps {
+  error: Error,
   reset: () => void
-}) {
+}
+
+
+const Error: React.FC<ErrorProps> = ({error ,  reset}) => {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(error)
@@ -28,3 +28,4 @@ export default function Error({
     </div>
   )
 }
+export default Error;

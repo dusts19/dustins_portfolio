@@ -1,29 +1,32 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { connectToDatabase } from "../utils/db";
-import Projects from "../utils/models/projects";
+// import connectToDatabase from "../utils/db";
+// import Projects from "../utils/models/projects";
 
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
-){
-    await connectToDatabase()
+// export async function GET(req: Request) {
+//     await connectToDatabase();
+//     const projects = await Projects.find({});
+//     return new Response(JSON.stringify(projects), {status: 200})
+// }
 
-    if (req.method === 'GET') {
-        const projects = await Projects.find({})
-        res.status(200).json(projects)
-    } else if (req.method === 'POST') {
-        const project = new Projects(req.body)
-        await project.save()
-        res.status(201).json(project)
-    } else if (req.method === 'PUT') {
-        const { _id, ...updates } = req.body as {_id:string; [key:string]: any}
-        const project = await Projects.findByIdAndUpdate(_id, updates, {
-            new: true,
-        })
-        res.status(200).json(project);
-    } else if (req.method === 'DELETE') {
-        const { _id } = req.body as { _id: string }
-        await Projects.findByIdAndDelete( _id )
-        res.status(204).end()
-    }
-}
+// export async function POST(req: Request) {
+//     const body = await req.json();
+//     const project = new Projects(body);
+//     await project.save();
+//     return new Response(JSON.stringify(project), { status: 201 })
+// }
+
+// export async function PUT(req: Request) {
+//     const body = await req.json();
+//     const { _id, ...updates } = body as { _id: string; [key: string]: any};
+//     const project = await Projects.findByIdAndUpdate(_id, updates, {
+//         new: true,
+//     });
+//     return new Response(JSON.stringify(project), { status: 200});
+// }
+
+// export async function DELETE(req: Request) {
+//     const body = await req.json();
+//     const { _id } = body as { _id: string };
+//     await Projects.findByIdAndDelete(_id);
+//     return new Response(null, {status:204})
+// }
+
