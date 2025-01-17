@@ -19,15 +19,7 @@ interface Work {
 
 interface WorkProps {
   // title: string; position: string; description: string; duration: string; url: string; imageUrl?: string ;
-  works: {
-    _id: string,
-    title: string,
-    position: string,
-    description: string,
-    duration: string,
-    url: string,
-    imageUrl?: string,
-  }[],
+  works: Work[],
 }
 
 
