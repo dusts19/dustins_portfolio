@@ -21,41 +21,37 @@ import WorkCard from './WorkCard';
         url: string,
         imageUrl?: string,
     }
-    interface WorkProps {
-    // title: string; position: string; description: string; duration: string; url: string; imageUrl?: string ;
-        works: Work[],
-    }
 
-const WorkDisplay: React.FC<WorkProps> = ({works}) => {
+const WorkDisplay: React.FC = () => {
     const { resolvedTheme } = useTheme()
 
-    const [myWorks, setMyWorks] = useState<Work[]> ([])
+    const [works, setWorks] = useState<Work[]> ([])
     const [displayedWorks, setDisplayedWorks] = useState<Work[]>([])
     const [currStartIndex, setCurrStartIndex] = useState(0)
 
-    // useEffect(() => {
-    //     fetch('/api/projects')
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         setWorks(data)
-    //         setDisplayedWorks(data.slice(0,3))
-    //     })
-    //     .catch((error) => console.error('Error fetching projects:', error));
-    // }, [])
+    useEffect(() => {
+        fetch('/api/works')
+        .then((response) => response.json())
+        .then((data) => {
+            setWorks(data)
+            setDisplayedWorks(data.slice(0,3))
+        })
+        .catch((error) => console.error('Error fetching projects:', error));
+    }, [])
 
     const handleLeftClick = () => {
         if (currStartIndex > 0) {
             const newStartIndex = currStartIndex - 1
             setCurrStartIndex(newStartIndex)
-            setDisplayedWorks(myWorks.slice(newStartIndex, newStartIndex + 3))
+            setDisplayedWorks(works.slice(newStartIndex, newStartIndex + 3))
         }
     }
 
     const handleRightClick = () => {
-        if (currStartIndex + 3 < myWorks.length) {
+        if (currStartIndex + 3 < works.length) {
             const newStartIndex = currStartIndex + 1
             setCurrStartIndex(newStartIndex)
-            setDisplayedWorks(myWorks.slice(newStartIndex, newStartIndex + 3))
+            setDisplayedWorks(works.slice(newStartIndex, newStartIndex + 3))
         }
     }
 
@@ -72,7 +68,7 @@ const WorkDisplay: React.FC<WorkProps> = ({works}) => {
                      {/* <Image src={light_left_arrow} alt="light_mode_left_arrow" height={10} width={10} className="h-10 w-auto sm:h-12 xs:h-16"/> */}
                 </button>
                 <div className="flex items-stretch sm:gap-1 sm:-my-3 sm:h-fit">
-                    {works.map((work) => (
+                    {displayedWorks.map((work) => (
                         <WorkCard key={work._id} work={work} />
                     ))}
                 </div>                
