@@ -39,9 +39,8 @@ const ProjectsDisplay: React.FC<ProjectProp> = ({projects}) => {
     // }, [])
 
     return (
-        <div className=''>
-            <div className="flex xs:pl-12 xs:mb-5 md:pr-2 md:pl-4">
-                <div className="grid items-center lg:grid-cols-3 xs:gap-1 xs:grid-cols-1 xs:space-y-3 md:grid-cols-2">
+            <div className="w-full px-4 md:px-12">
+                <div className="grid gap-6 xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                     
                     {projects.map((project) => (
                         
@@ -49,8 +48,6 @@ const ProjectsDisplay: React.FC<ProjectProp> = ({projects}) => {
                     ))}
                 </div>                
             </div>
-
-        </div>
 
     )
 }

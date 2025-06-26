@@ -3,7 +3,7 @@ import CoffeeFueledWorkerSVG from '../../../public/images/coffee-fueled-worker.s
 import React from 'react'
 
 const FrontPage: React.FC = () => {
-    const webDev = ['Next.js', 'Tailwind.css', 'Node/Npm', 'MongoDb', 'SQL']
+    const webDev = ['Next.js', 'Tailwind.css', 'Spring Boot', 'Node/Npm', 'MongoDb', 'SQL']
     const dataSci = ['Python', 'TensorFlow', 'Keras']
     const technologies = ['Git', 'Linux', 'Docker', 'VS Code']
     const dataVis = ['Tableau', 'Excel']
